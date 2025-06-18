@@ -15,13 +15,13 @@ window.addEventListener('DOMContentLoaded', () => {
     let speed = 10;
     let isGameOver = false;
 
-    setGameHeight();
+    setStartingPosition();
 
     window.addEventListener('resize', () => {
-        setGameHeight();
+        setStartingPosition();
     });
 
-    function setGameHeight() {
+    function setStartingPosition() {
         gameHeight = getComputedStyle(game).getPropertyValue('--_gameHeight');
         playerY = gameHeight - 100;
         player.style.left = playerX + 'px';
@@ -103,8 +103,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   
     restartButton.addEventListener('click', () => {
-      player.style.left = playerX + 'px';
-      player.style.top = playerY + 'px';
+      setStartingPosition()  
   
       gameOver.style.display = 'none';
       winMessage.style.display = 'none';
