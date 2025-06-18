@@ -87,13 +87,13 @@ strong {
   #game-over {
     color: #1e407c;
     font-size: 25px;
-    font-weight: 300;
+    font-weight: 400;
   }
   
   #win {
     color: #1e407c;
     font-size: 25px;
-    font-weight: 300;
+    font-weight: 400;
   }
   
   #restart-button {
