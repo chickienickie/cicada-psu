@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/f595c3e68f.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <h1>Happy Valley Cicada Drizzle Dash<h1>
@@ -20,14 +21,27 @@
     
     🌧️</h3>
     <h2>Umbrellas are for humans. <em>You?</em> You’ve got <em>wings</em> and <em>hustle</em>.  </h2>
+
+    <div id="game-container">
+        <div id="game">
+          <img src="cicada-psu.png" id="friend" alt="PSU Cicada Friend">
+          <img src="cicada-psu.png" id="player" alt="Player Cicada">
+        </div>
+      </div>
+      
+      <div id="game-over">You got soaked! Try again.</div>
+      <div id="win">You made it to your friend! WE ARE! 🐾</div>
+      <button id="restart-button" style="display: none;">Restart Game</button>
+      
+      <!-- Mobile controls -->
+      <div id="mobile-controls">
+        <button id="up"><i class="fa-solid fa-arrow-up"></i></button><br>
+        <button id="left"><i class="fa-solid fa-arrow-left"></i></button>
+        <button id="down"><i class="fa-solid fa-arrow-down"></i></button>
+        <button id="right"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
     
-  <div id="game">
-    <img src="cicada-psu.png" id="friend" alt="PSU Cicada Friend">
-    <img src="cicada-psu.png" id="player" alt="Player Cicada">
-  </div>
-  <div id="game-over">You got soaked! Try again.</div>
-  <div id="win">You made it to your friend! WE ARE! 🐾</div>
-  <button id="restart-button" style="display: none;">Restart Game</button>
+
 
   <script src="script.js"></script>
 </body>

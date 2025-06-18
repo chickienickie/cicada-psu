@@ -110,3 +110,33 @@ restartButton.addEventListener('click', () => {
     restartButton.style.display = 'none';
     isGameOver = false;
   });
+
+  // Mobile button controls
+function simulateKey(key) {
+    const event = new KeyboardEvent('keydown', { key });
+    document.dispatchEvent(event);
+  }
+  
+  document.getElementById('up').addEventListener('click', () => simulateKey('ArrowUp'));
+  document.getElementById('down').addEventListener('click', () => simulateKey('ArrowDown'));
+  document.getElementById('left').addEventListener('click', () => simulateKey('ArrowLeft'));
+  document.getElementById('right').addEventListener('click', () => simulateKey('ArrowRight'));
+  
+  // Restart button logic
+  const restartButton = document.getElementById('restart-button');
+  restartButton.addEventListener('click', () => {
+    // Reset player
+    playerX = 170;
+    playerY = 520;
+    player.style.left = playerX + 'px';
+    player.style.top = playerY + 'px';
+  
+    gameOver.style.display = 'none';
+    winMessage.style.display = 'none';
+    restartButton.style.display = 'none';
+    isGameOver = false;
+  
+    // Remove any leftover raindrops
+    document.querySelectorAll('.raindrop').forEach(drop => drop.remove());
+  });
+  
