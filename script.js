@@ -8,12 +8,25 @@ window.addEventListener('DOMContentLoaded', () => {
     const winMessage = document.getElementById('win');
     const restartButton = document.getElementById('restart-button');
   
+    let gameHeight;
     let playerX = 170;
-    let playerY = 520;
-    let gameHeight = 600;
+    let playerY;
     let gameWidth = 400;
     let speed = 10;
     let isGameOver = false;
+
+    setGameHeight();
+
+    window.addEventListener('resize', () => {
+        setGameHeight();
+    });
+
+    function setGameHeight() {
+        gameHeight = getComputedStyle(game).getPropertyValue('--_gameHeight');
+        playerY = gameHeight - 100;
+        player.style.left = playerX + 'px';
+        player.style.top = playerY + 'px';
+    }
   
     document.addEventListener('keydown', movePlayer);
   
@@ -90,8 +103,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   
     restartButton.addEventListener('click', () => {
-      playerX = 170;
-      playerY = 520;
       player.style.left = playerX + 'px';
       player.style.top = playerY + 'px';
   
